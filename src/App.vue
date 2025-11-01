@@ -7,6 +7,9 @@
   <h1>{{ msg }}</h1>
 </template>
 
-<style scoped>
-
+<style>
+  h1 {
+    color: #42b983;
+    text-transform: uppercase;
+  }
 </style>
