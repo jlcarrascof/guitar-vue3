@@ -2,11 +2,16 @@
     import { ref, reactive } from 'vue';
     import { db } from './data/guitars';
 
+    /*
     const state = reactive({
         guitarras: db
     });
 
     console.log(state.guitarras);
+    */
+
+   const guitars = ref(db);
+   console.log(guitars.value);   
 </script>
 
 <template>
