@@ -1,20 +1,8 @@
 <script setup>
-    import { ref, reactive, onMounted } from 'vue';
-    import { db } from './data/guitars';
-
-    /*
-    const state = reactive({
-        guitarras: db
-    });
-
-    console.log(state.guitarras);
-    */
+   import { ref, reactive, onMounted } from 'vue';
+   import { db } from './data/guitars';
 
    const guitars = ref([]);
-   // console.log(guitars.value);
-   const state = reactive({
-        guitarras: db
-   });   
 
    onMounted(() => {
         guitars.value = db;
