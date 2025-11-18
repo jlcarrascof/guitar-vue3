@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive } from 'vue';
+    import { ref, reactive, onMounted } from 'vue';
     import { db } from './data/guitars';
 
     /*
@@ -10,8 +10,15 @@
     console.log(state.guitarras);
     */
 
-   const guitars = ref(db);
-   console.log(guitars.value);   
+   const guitars = ref([]);
+   // console.log(guitars.value);
+   const state = reactive({
+        guitarras: db
+   });   
+
+   onMounted(() => {
+        guitars.value = db;
+   })
 </script>
 
 <template>
