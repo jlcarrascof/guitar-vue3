@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div v-for="guitar in guitars" class="col-md-6 col-lg-4 my-4 row align-items-center">
+    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
         <div class="col-4">
             <img class="img-fluid" src="/img/guitarra_01.jpg" alt="imagen guitarra">
         </div>
