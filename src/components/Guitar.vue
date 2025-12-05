@@ -10,7 +10,7 @@
 <template>
     <div class="col-md-6 col-lg-4 my-4 row align-items-center">
         <div class="col-4">
-            <img class="img-fluid" v-bind:src="guitar.imagen" alt="imagen guitarra">
+            <img class="img-fluid" :src="'/img/' + guitar.imagen + '.jpg'" alt="imagen guitarra">
         </div>
         <div class="col-8">
             <h3 class="text-black fs-4 fw-bold text-uppercase">{{ guitar.nombre }}</h3>
