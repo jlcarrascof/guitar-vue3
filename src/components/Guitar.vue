@@ -12,7 +12,7 @@
         <div class="col-4">
             <img class="img-fluid" 
                 :src="'/img/' + guitar.imagen + '.jpg'" 
-                alt="imagen guitarra"
+                :alt="'imagen guitarra ' + guitar.nombre"
             />
         </div>
         <div class="col-8">
