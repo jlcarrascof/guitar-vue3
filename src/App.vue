@@ -11,7 +11,8 @@
 
    const addCart = () => {
         // myNumber.value++;
-        alert('You clicked the button!');
+        // alert('You clicked the button!');
+        console.log('adding to cart');
    };
 </script>
 
