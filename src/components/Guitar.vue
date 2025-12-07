@@ -30,7 +30,7 @@
             <button 
                 type="button"
                 class="btn btn-dark w-100 "
-                @click="increment"
+                @click="$emit('increment')"
             >Agregar al Carrito</button>
         </div>
     </div><!-- FIN GUITARRA -->
