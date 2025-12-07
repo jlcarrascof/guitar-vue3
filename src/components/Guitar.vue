@@ -10,9 +10,6 @@
         }
     });
 
-    const increment = () => {
-        myNumber.value++;
-    };
 </script>
 
 <template>

@@ -1,13 +1,17 @@
 <script setup>
-   import { ref, reactive, onMounted } from 'vue';
-   import { db } from './data/guitars';
-   import Guitar from './components/Guitar.vue';
+    import { ref, reactive, onMounted } from 'vue';
+    import { db } from './data/guitars';
+    import Guitar from './components/Guitar.vue';
 
-   const guitars = ref([]);
+    const guitars = ref([]);
 
-   onMounted(() => {
+    onMounted(() => {
         guitars.value = db
-   })
+    })
+
+   const increment = () => {
+        myNumber.value++;
+   };
 </script>
 
 <template>
