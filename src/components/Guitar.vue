@@ -10,7 +10,7 @@
         }
     });
 
-    defineEmits(['increment']);
+    defineEmits(['add-cart']);
 
 </script>
 
@@ -30,7 +30,7 @@
             <button 
                 type="button"
                 class="btn btn-dark w-100 "
-                @click="$emit('increment')"
+                @click="$emit('add-cart')"
             >Agregar al Carrito</button>
         </div>
     </div><!-- FIN GUITARRA -->

@@ -108,7 +108,7 @@
             <Guitar 
                 v-for="guitar in guitars"
                 :guitar="guitar"
-                @increment="addCart"
+                @add-cart="addCart"
             />
         </div>
     </main>
