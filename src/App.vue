@@ -9,7 +9,7 @@
         guitars.value = db
     })
 
-   const increment = () => {
+   const addCart = () => {
         // myNumber.value++;
         alert('You clicked the button!');
    };
@@ -108,7 +108,7 @@
             <Guitar 
                 v-for="guitar in guitars"
                 :guitar="guitar"
-                @increment="increment"
+                @increment="addCart"
             />
         </div>
     </main>
