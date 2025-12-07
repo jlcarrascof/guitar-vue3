@@ -31,7 +31,7 @@
             <button 
                 type="button"
                 class="btn btn-dark w-100 "
-                v-on:click="increment"
+                @click="increment"
             >Agregar al Carrito</button>
         </div>
     </div><!-- FIN GUITARRA -->
