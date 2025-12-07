@@ -10,7 +10,8 @@
     })
 
    const increment = () => {
-        myNumber.value++;
+        // myNumber.value++;
+        alert('You clicked the button!');
    };
 </script>
 
