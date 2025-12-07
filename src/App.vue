@@ -9,10 +9,10 @@
         guitars.value = db
     })
 
-   const addCart = () => {
+   const addCart = (number) => {
         // myNumber.value++;
         // alert('You clicked the button!');
-        console.log('adding to cart');
+        console.log('adding to cart', number);
    };
 </script>
 
