@@ -10,6 +10,8 @@
         }
     });
 
+    defineEmits(['increment']);
+
 </script>
 
 <template>

@@ -108,6 +108,7 @@
             <Guitar 
                 v-for="guitar in guitars"
                 :guitar="guitar"
+                @increment="increment"
             />
         </div>
     </main>
