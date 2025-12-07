@@ -1,4 +1,8 @@
 <script setup>
+    import { ref } from 'vue';
+
+    const myNumber = ref(0);
+
     const props = defineProps({
         guitar: {
             type: Object,
