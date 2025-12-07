@@ -30,7 +30,7 @@
             <button 
                 type="button"
                 class="btn btn-dark w-100 "
-                @click="$emit('add-cart', 123)"
+                @click="$emit('add-cart', guitar.id)"
             >Agregar al Carrito</button>
         </div>
     </div><!-- FIN GUITARRA -->
