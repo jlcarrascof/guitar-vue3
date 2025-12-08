@@ -4,13 +4,14 @@
     import Guitar from './components/Guitar.vue';
 
     const guitars = ref([]);
+    const cart = ref([]);
 
     onMounted(() => {
         guitars.value = db
     })
 
    const addCart = (guitar) => {
-        console.log('adding to cart', guitar);
+        cart.value.push(guitar);
    };
 </script>
 
