@@ -11,6 +11,7 @@
     })
 
    const addCart = (guitar) => {
+        guitar.cantidad = 1;
         cart.value.push(guitar);
    };
 </script>
