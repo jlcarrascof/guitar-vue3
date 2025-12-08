@@ -26,7 +26,7 @@
                             <p v-if="cart.length === 0" class="text-center">
                                 El carrito esta vacio
                             </p>
-                            <div>
+                            <div v-else>
                                 <table v-if="cart.length > 0" class="w-100 table">
                                     <thead>
                                         <tr>
