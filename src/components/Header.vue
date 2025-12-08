@@ -1,5 +1,10 @@
 <script setup>
-
+    const props = defineProps({
+        cart: {
+            type: Array,
+            required: true
+        }
+    });
 </script>
 
 <template>
