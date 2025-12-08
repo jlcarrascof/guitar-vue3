@@ -2,6 +2,7 @@
     import { ref, reactive, onMounted } from 'vue';
     import { db } from './data/guitars';
     import Guitar from './components/Guitar.vue';
+    import Header from './components/Header.vue';
 
     const guitars = ref([]);
     const cart = ref([]);
@@ -17,7 +18,7 @@
 </script>
 
 <template>
-
+    <Header />
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
 
