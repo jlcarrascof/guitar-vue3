@@ -23,7 +23,7 @@
                         <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" class="bg-white p-3">
-                            <p v-if="cart.length === 0" class="text-center">
+                            <p v-if="cart.length === 0" class="text-center m-0">
                                 El carrito esta vacio
                             </p>
                             <div v-else>
