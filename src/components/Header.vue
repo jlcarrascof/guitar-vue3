@@ -23,7 +23,9 @@
                         <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" class="bg-white p-3">
-                            <p v-if="cart.length === 0" class="text-center">El carrito esta vacio</p>
+                            <p v-if="cart.length === 0" class="text-center">
+                                El carrito esta vacio
+                            </p>
                             <table class="w-100 table">
                                 <thead>
                                     <tr>
