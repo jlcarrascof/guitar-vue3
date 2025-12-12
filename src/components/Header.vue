@@ -42,7 +42,11 @@
                                             v-for="product in cart"
                                         >
                                             <td>
-                                                <img class="img-fluid" src="/img/guitarra_02.jpg" alt="imagen guitarra">
+                                                <img 
+                                                    class="img-fluid" 
+                                                    :src="'/img/' + product.imagen + '.jpg'" 
+                                                    :alt="'imagen guitarra ' + product.nombre"
+                                                >
                                             </td>
                                             <td>SRV</td>
                                             <td class="fw-bold">
