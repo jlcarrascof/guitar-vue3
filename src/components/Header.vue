@@ -38,7 +38,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr
+                                            v-for="product in cart"
+                                        >
                                             <td>
                                                 <img class="img-fluid" src="/img/guitarra_02.jpg" alt="imagen guitarra">
                                             </td>
