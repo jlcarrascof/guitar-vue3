@@ -99,3 +99,4 @@
         <img class="header-guitarra" src="/img/header_guitarra.png" alt="imagen header">
     </header>
 </template>
+
