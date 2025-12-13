@@ -48,9 +48,9 @@
                                                     :alt="'imagen guitarra ' + product.nombre"
                                                 >
                                             </td>
-                                            <td>SRV</td>
+                                            <td>{{ product.nombre }}</td>
                                             <td class="fw-bold">
-                                                    $299
+                                                    {{ product.precio }}
                                             </td>
                                             <td class="flex align-items-start gap-4">
                                                 <button
