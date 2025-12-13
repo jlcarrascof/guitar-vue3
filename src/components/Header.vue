@@ -59,7 +59,7 @@
                                                 >
                                                     -
                                                 </button>
-                                                    1
+                                                    {{ product.cantidad }}
                                                 <button
                                                     type="button"
                                                     class="btn btn-dark"
