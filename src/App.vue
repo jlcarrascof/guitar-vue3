@@ -37,6 +37,8 @@
 <template>
     <Header 
         :cart="cart"
+        @increment-quantity="incrementQuantity"
+        @decrement-quantity="decrementQuantity"
     />
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
