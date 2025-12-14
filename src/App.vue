@@ -23,6 +23,15 @@
         }
 
    };
+
+   const decrementQuantity = () => {
+        console.log('Less ..');     
+   }
+
+   const incrementQuantity = () => {
+        console.log('More ..');     
+   }
+
 </script>
 
 <template>
