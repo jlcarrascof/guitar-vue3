@@ -5,6 +5,8 @@
             required: true
         }
     });
+
+    defineEmits(['decrement-quantity', 'increment-quantity'])
 </script>
 
 <template>
@@ -56,6 +58,7 @@
                                                 <button
                                                     type="button"
                                                     class="btn btn-dark"
+                                                    @click="$emit('decrement-quantity')"
                                                 >
                                                     -
                                                 </button>
@@ -63,6 +66,7 @@
                                                 <button
                                                     type="button"
                                                     class="btn btn-dark"
+                                                    @click="$emit('decrement-quantity')"
                                                 >
                                                     +
                                                 </button>
