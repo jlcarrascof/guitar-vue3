@@ -13,6 +13,9 @@
     })
 
    const addCart = (guitar) => {
+        const existCart = cart.value.findIndex(product => product.id === guitar.id);
+
+        console.log(existCart);
         guitar.cantidad = 1;
         cart.value.push(guitar);
    };
