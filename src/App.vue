@@ -43,6 +43,7 @@
 <template>
     <Header 
         :cart="cart"
+        :guitar="guitar"
         @increment-quantity="incrementQuantity"
         @decrement-quantity="decrementQuantity"
     />

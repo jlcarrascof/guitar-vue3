@@ -3,6 +3,10 @@
         cart: {
             type: Array,
             required: true
+        },
+        guitar: {
+            type: Object,
+            required: true
         }
     });
 
