@@ -7,9 +7,11 @@
 
     const guitars = ref([]);
     const cart = ref([]);
+    const guitar = ref({});
 
     onMounted(() => {
         guitars.value = db
+        guitar.value = db[3];
     })
 
    const addCart = (guitar) => {
