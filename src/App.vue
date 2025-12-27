@@ -25,11 +25,11 @@
    };
 
    const decrementQuantity = (id) => {
-        console.log('Less ..');     
+        console.log(id);     
    }
 
    const incrementQuantity = (id) => {
-        console.log('More ..');     
+        console.log(id);     
    }
 
 </script>
