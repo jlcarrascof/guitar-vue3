@@ -25,11 +25,13 @@
    };
 
    const decrementQuantity = (id) => {
-        console.log(id);     
+        const index = cart.value.findIndex(product => product.id === id);
+        cart.value[index].cantidad--; 
    }
 
    const incrementQuantity = (id) => {
-        console.log(id);     
+        const index = cart.value.findIndex(product => product.id === id);
+        cart.value[index].cantidad++;    
    }
 
 </script>
