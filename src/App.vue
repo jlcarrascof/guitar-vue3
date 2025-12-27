@@ -24,11 +24,11 @@
 
    };
 
-   const decrementQuantity = () => {
+   const decrementQuantity = (id) => {
         console.log('Less ..');     
    }
 
-   const incrementQuantity = () => {
+   const incrementQuantity = (id) => {
         console.log('More ..');     
    }
 
