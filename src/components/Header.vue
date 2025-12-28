@@ -1,4 +1,6 @@
 <script setup>
+    import { computed } from 'vue';
+
     const props = defineProps({
         cart: {
             type: Array,
@@ -11,6 +13,10 @@
     });
 
     defineEmits(['decrement-quantity', 'increment-quantity', 'add-cart'])
+
+    const totalToPay = computed(() => {
+        return props.cart.reduce((total, product) => total + (product.cantidad * product.precio), 0);
+    });
 </script>
 
 <template>
