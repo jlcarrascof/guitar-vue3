@@ -46,6 +46,7 @@
         :guitar="guitar"
         @increment-quantity="incrementQuantity"
         @decrement-quantity="decrementQuantity"
+        @add-cart="addCart"
     />
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>

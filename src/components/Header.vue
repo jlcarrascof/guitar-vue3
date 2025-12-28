@@ -10,7 +10,7 @@
         }
     });
 
-    defineEmits(['decrement-quantity', 'increment-quantity'])
+    defineEmits(['decrement-quantity', 'increment-quantity', 'add-cart'])
 </script>
 
 <template>
@@ -103,6 +103,7 @@
                     <button 
                         type="button"
                         class="btn fs-4 bg-primary text-white py-2 px-5"
+                        @click="$emit('add-cart', guitar)"
                     >Agregar al Carrito</button>
                 </div>
             </div>
