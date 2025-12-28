@@ -93,7 +93,7 @@
                                     </tbody>
                                 </table>
 
-                                <p class="text-end">Total pagar: <span class="fw-bold">$899</span></p>
+                                <p class="text-end">Total pagar: <span class="fw-bold">${{ totalToPay }}</span></p>
                                 <button class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                 <div class="col-md-6 text-center text-md-start pt-5">
                     <h1 class="display-2 fw-bold">Modelo {{ guitar.nombre }}</h1>
                     <p class="mt-5 fs-5 text-white">{{ guitar.descripcion }}</p>
-                    <p class="text-primary fs-1 fw-black">{{ guitar.precio }}</p>
+                    <p class="text-primary fs-1 fw-black">${{ guitar.precio }}</p>
                     <button 
                         type="button"
                         class="btn fs-4 bg-primary text-white py-2 px-5"
