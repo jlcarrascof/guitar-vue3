@@ -39,7 +39,7 @@
    }
 
    const deleteProduct = (id) => {
-        console.log(id);
+        cart.value = cart.value.filter(product => product.id !== id)
    }
 
 </script>
