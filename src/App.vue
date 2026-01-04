@@ -38,6 +38,10 @@
         cart.value[index].cantidad++;    
    }
 
+   const deleteProduct = (id) => {
+        console.log(id);
+   }
+
 </script>
 
 <template>
