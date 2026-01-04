@@ -56,6 +56,7 @@
         @decrement-quantity="decrementQuantity"
         @add-cart="addCart"
         @delete-product="deleteProduct"
+        @empty-cart="emptyCart"
     />
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
