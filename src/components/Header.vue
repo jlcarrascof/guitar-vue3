@@ -12,7 +12,7 @@
         }
     });
 
-    defineEmits(['decrement-quantity', 'increment-quantity', 'add-cart', 'delete-product'])
+    defineEmits(['decrement-quantity', 'increment-quantity', 'add-cart', 'delete-product', 'empty-cart'])
 
     const totalToPay = computed(() => {
         return props.cart.reduce((total, product) => total + (product.cantidad * product.precio), 0);
@@ -95,7 +95,12 @@
                                 </table>
 
                                 <p class="text-end">Total pagar: <span class="fw-bold">${{ totalToPay }}</span></p>
-                                <button class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                                <button 
+                                    class="btn btn-dark w-100 mt-3 p-2"
+                                    @click="$emit('empty-cart')"
+                                    >
+                                    Vaciar Carrito
+                                </button>
                             </div>
                         </div>
                     </div>
