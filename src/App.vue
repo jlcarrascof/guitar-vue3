@@ -42,6 +42,10 @@
         cart.value = cart.value.filter(product => product.id !== id)
    }
 
+   const emptyCart = () => {
+       cart.value = [];
+   }
+
 </script>
 
 <template>
