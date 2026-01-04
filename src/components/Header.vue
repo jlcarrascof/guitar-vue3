@@ -12,7 +12,7 @@
         }
     });
 
-    defineEmits(['decrement-quantity', 'increment-quantity', 'add-cart'])
+    defineEmits(['decrement-quantity', 'increment-quantity', 'add-cart', 'delete-product'])
 
     const totalToPay = computed(() => {
         return props.cart.reduce((total, product) => total + (product.cantidad * product.precio), 0);
@@ -85,6 +85,7 @@
                                                 <button
                                                     class="btn btn-danger"
                                                     type="button"
+                                                    @click="$emit('delete-product', product.id)"
                                                 >
                                                     X
                                                 </button>
