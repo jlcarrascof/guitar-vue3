@@ -12,6 +12,11 @@
     onMounted(() => {
         guitars.value = db
         guitar.value = db[3];
+
+        const cartStorage = localStorage.getItem('cart');
+        if (cartStorage) {
+            cart.value = JSON.parse(cartStorage);
+        }
     })
 
     const saveLocalStorage = () => {
@@ -36,20 +41,32 @@
         const index = cart.value.findIndex(product => product.id === id);
         if (cart.value[index].cantidad <= 1) return;
         cart.value[index].cantidad--; 
+
+        saveLocalStorage();
+
     }
 
     const incrementQuantity = (id) => {
             const index = cart.value.findIndex(product => product.id === id);
             if (cart.value[index].cantidad >= 5) return;
-            cart.value[index].cantidad++;    
+            cart.value[index].cantidad++;   
+            
+            saveLocalStorage();
+
     }
 
     const deleteProduct = (id) => {
             cart.value = cart.value.filter(product => product.id !== id)
+
+            saveLocalStorage();
+
     }
 
     const emptyCart = () => {
         cart.value = [];
+
+        saveLocalStorage();
+
     }
 
 </script>
