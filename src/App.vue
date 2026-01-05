@@ -14,7 +14,11 @@
         guitar.value = db[3];
     })
 
-   const addCart = (guitar) => {
+    const saveLocalStorage = () => {
+        localStorage.setItem('cart', JSON.stringify(cart.value))
+    } 
+
+    const addCart = (guitar) => {
         const existCart = cart.value.findIndex(product => product.id === guitar.id);
 
         if (existCart >= 0) {
@@ -24,27 +28,29 @@
             cart.value.push(guitar);
         }
 
-   };
+        saveLocalStorage();
 
-   const decrementQuantity = (id) => {
+    };
+
+    const decrementQuantity = (id) => {
         const index = cart.value.findIndex(product => product.id === id);
         if (cart.value[index].cantidad <= 1) return;
         cart.value[index].cantidad--; 
-   }
+    }
 
-   const incrementQuantity = (id) => {
-        const index = cart.value.findIndex(product => product.id === id);
-        if (cart.value[index].cantidad >= 5) return;
-        cart.value[index].cantidad++;    
-   }
+    const incrementQuantity = (id) => {
+            const index = cart.value.findIndex(product => product.id === id);
+            if (cart.value[index].cantidad >= 5) return;
+            cart.value[index].cantidad++;    
+    }
 
-   const deleteProduct = (id) => {
-        cart.value = cart.value.filter(product => product.id !== id)
-   }
+    const deleteProduct = (id) => {
+            cart.value = cart.value.filter(product => product.id !== id)
+    }
 
-   const emptyCart = () => {
-       cart.value = [];
-   }
+    const emptyCart = () => {
+        cart.value = [];
+    }
 
 </script>
 
