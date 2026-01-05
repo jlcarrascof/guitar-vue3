@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive, onMounted } from 'vue';
+    import { ref, reactive, onMounted, watch } from 'vue';
     import { db } from './data/guitars';
     import Guitar from './components/Guitar.vue';
     import Header from './components/Header.vue';
@@ -8,6 +8,12 @@
     const guitars = ref([]);
     const cart = ref([]);
     const guitar = ref({});
+
+    watch(cart, () => {
+        saveLocalStorage();
+    }, {
+        deep: true,
+    })
 
     onMounted(() => {
         guitars.value = db
@@ -32,41 +38,26 @@
             guitar.cantidad = 1;
             cart.value.push(guitar);
         }
-
-        saveLocalStorage();
-
     };
 
     const decrementQuantity = (id) => {
         const index = cart.value.findIndex(product => product.id === id);
         if (cart.value[index].cantidad <= 1) return;
         cart.value[index].cantidad--; 
-
-        saveLocalStorage();
-
     }
 
     const incrementQuantity = (id) => {
             const index = cart.value.findIndex(product => product.id === id);
             if (cart.value[index].cantidad >= 5) return;
             cart.value[index].cantidad++;   
-            
-            saveLocalStorage();
-
     }
 
     const deleteProduct = (id) => {
             cart.value = cart.value.filter(product => product.id !== id)
-
-            saveLocalStorage();
-
     }
 
     const emptyCart = () => {
         cart.value = [];
-
-        saveLocalStorage();
-
     }
 
 </script>
