@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive, onMounted } from 'vue';
+    import { ref, reactive, onMounted, watch } from 'vue';
     import { db } from './data/guitars';
     import Guitar from './components/Guitar.vue';
     import Header from './components/Header.vue';
@@ -7,12 +7,29 @@
 
     const guitars = ref([]);
     const cart = ref([]);
+    const guitar = ref({});
+
+    watch(cart, () => {
+        saveLocalStorage();
+    }, {
+        deep: true,
+    })
 
     onMounted(() => {
         guitars.value = db
+        guitar.value = db[3];
+
+        const cartStorage = localStorage.getItem('cart');
+        if (cartStorage) {
+            cart.value = JSON.parse(cartStorage);
+        }
     })
 
-   const addCart = (guitar) => {
+    const saveLocalStorage = () => {
+        localStorage.setItem('cart', JSON.stringify(cart.value))
+    } 
+
+    const addCart = (guitar) => {
         const existCart = cart.value.findIndex(product => product.id === guitar.id);
 
         if (existCart >= 0) {
@@ -21,24 +38,39 @@
             guitar.cantidad = 1;
             cart.value.push(guitar);
         }
+    };
 
-   };
+    const decrementQuantity = (id) => {
+        const index = cart.value.findIndex(product => product.id === id);
+        if (cart.value[index].cantidad <= 1) return;
+        cart.value[index].cantidad--; 
+    }
 
-   const decrementQuantity = () => {
-        console.log('Less ..');     
-   }
+    const incrementQuantity = (id) => {
+            const index = cart.value.findIndex(product => product.id === id);
+            if (cart.value[index].cantidad >= 5) return;
+            cart.value[index].cantidad++;   
+    }
 
-   const incrementQuantity = () => {
-        console.log('More ..');     
-   }
+    const deleteProduct = (id) => {
+            cart.value = cart.value.filter(product => product.id !== id)
+    }
+
+    const emptyCart = () => {
+        cart.value = [];
+    }
 
 </script>
 
 <template>
     <Header 
         :cart="cart"
+        :guitar="guitar"
         @increment-quantity="incrementQuantity"
         @decrement-quantity="decrementQuantity"
+        @add-cart="addCart"
+        @delete-product="deleteProduct"
+        @empty-cart="emptyCart"
     />
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>

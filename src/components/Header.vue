@@ -1,12 +1,22 @@
 <script setup>
+    import { computed } from 'vue';
+
     const props = defineProps({
         cart: {
             type: Array,
             required: true
+        },
+        guitar: {
+            type: Object,
+            required: true
         }
     });
 
-    defineEmits(['decrement-quantity', 'increment-quantity'])
+    defineEmits(['decrement-quantity', 'increment-quantity', 'add-cart', 'delete-product', 'empty-cart'])
+
+    const totalToPay = computed(() => {
+        return props.cart.reduce((total, product) => total + (product.cantidad * product.precio), 0);
+    });
 </script>
 
 <template>
@@ -58,7 +68,7 @@
                                                 <button
                                                     type="button"
                                                     class="btn btn-dark"
-                                                    @click="$emit('decrement-quantity')"
+                                                    @click="$emit('decrement-quantity', product.id)"
                                                 >
                                                     -
                                                 </button>
@@ -66,7 +76,7 @@
                                                 <button
                                                     type="button"
                                                     class="btn btn-dark"
-                                                    @click="$emit('increment-quantity')"
+                                                    @click="$emit('increment-quantity', product.id)"
                                                 >
                                                     +
                                                 </button>
@@ -75,6 +85,7 @@
                                                 <button
                                                     class="btn btn-danger"
                                                     type="button"
+                                                    @click="$emit('delete-product', product.id)"
                                                 >
                                                     X
                                                 </button>
@@ -83,8 +94,13 @@
                                     </tbody>
                                 </table>
 
-                                <p class="text-end">Total pagar: <span class="fw-bold">$899</span></p>
-                                <button class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                                <p class="text-end">Total pagar: <span class="fw-bold">${{ totalToPay }}</span></p>
+                                <button 
+                                    class="btn btn-dark w-100 mt-3 p-2"
+                                    @click="$emit('empty-cart')"
+                                    >
+                                    Vaciar Carrito
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -93,12 +109,13 @@
 
             <div class="row mt-5">
                 <div class="col-md-6 text-center text-md-start pt-5">
-                    <h1 class="display-2 fw-bold">Modelo VAI</h1>
-                    <p class="mt-5 fs-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, possimus quibusdam dolor nemo velit quo, fuga omnis, iure molestias optio tempore sint at ipsa dolorum odio exercitationem eos inventore odit.</p>
-                    <p class="text-primary fs-1 fw-black">$399</p>
+                    <h1 class="display-2 fw-bold">Modelo {{ guitar.nombre }}</h1>
+                    <p class="mt-5 fs-5 text-white">{{ guitar.descripcion }}</p>
+                    <p class="text-primary fs-1 fw-black">${{ guitar.precio }}</p>
                     <button 
                         type="button"
                         class="btn fs-4 bg-primary text-white py-2 px-5"
+                        @click="$emit('add-cart', guitar)"
                     >Agregar al Carrito</button>
                 </div>
             </div>
